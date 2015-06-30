@@ -12,11 +12,19 @@
     "README.md"
   ],
   "devDependencies": {
+    "express": "^4.13.0",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-babel": "*",
+    "gulp-browserify": "^0.5.1",
     "gulp-jade": "^1.0.1",
+    "gulp-js-combine": "git://github.com/shadowmint/gulp-js-combine.git#0.0.4",
+    "gulp-live-server": "0.0.21",
     "gulp-sass": "^2.0.2",
-    "run-sequence": "^1.1.1",
-    "gulp-js-combine": "git://github.com/shadowmint/gulp-js-combine.git#0.0.2"
+    "gulp-umd": "^0.2.0",
+    "jade": "^1.11.0",
+    "jquery": "^1.11.3",
+    "node-static": "^0.7.6",
+    "run-sequence": "^1.1.1"
   }
 }

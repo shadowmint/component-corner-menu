@@ -1,0 +1,48 @@
+/* Constants */
+$full_height: 1.5em;
+$zero_height: 0em;
+
+/* Animation to open menu */
+@keyframes showmenu {
+  0% {
+    line-height: $zero_height;
+    height: $zero_height;
+  }
+  100% {
+    height: $full_height;
+    line-height: $full_height;
+  }
+}
+
+.corner-menu {
+  h1 {
+    margin: 0px;
+    padding: 0px;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+    li {
+      height: $zero_height;
+      line-height: $zero_height;
+      overflow: hidden;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+    }
+  }
+  &.state--active {
+    li {
+      height: $full_height;
+      line-height: $full_height;
+      animation-name: showmenu;
+      animation-duration: 1s;
+    }
+  }
+}
+.corner-menu-box {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
