@@ -46,5 +46,27 @@
     <a href="#">Ds thing or whatever 4</a>
   </div>
 
+  <div class="corner-menu" id="dynamic" data-short="Dynamic" data-title="This one should dynamically update">
+    <a href="#">thing or whatever</a>
+    <a href="#">Ds thing or whatever 1</a>
+    <a href="#">his thing or whatever 2</a>
+    <a href="#">Dis thing or whatever 3</a>
+    <a href="#">Ds thing or whatever 4</a>
+  </div>
+
+  <script>
+    function update() {
+      var data = document.getElementById('dynamic_input').value;
+      var items = data.split(',');
+      var cmp = window['corner-menu']['dynamic'];
+      cmp.clear();
+      for (item in items) {
+        cmp.push(items[item], item);
+      }
+      cmp.redraw();
+    }
+  </script>
+  <input type="text" id="dynamic_input"> <a href="javascript: update()">Click to update</a>
+
   <script src="index.js"></script>
 </body>

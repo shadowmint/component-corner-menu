@@ -30,8 +30,27 @@ class CornerMenu {
     // Move content to shared root
     $root.append($el);
 
+    // If the element has an id, bind it to the window
+    var id = this.$el.attr('id');
+    if (id) {
+      if (!window['corner-menu']) {
+        window['corner-menu'] = {};
+      }
+      window['corner-menu'][id] = this;
+    }
+
     // Draw initial state
     this.redraw();
+  }
+
+  /** Clear all held menu items */
+  clear() {
+    this.data.items = [];
+  }
+
+  /** Push a menu item */
+  push(title, task) {
+    this.data.items.push({title: title, task: task});
   }
 
   /** Redraw this element */
