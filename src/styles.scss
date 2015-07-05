@@ -15,6 +15,9 @@ $zero_height: 0em;
 }
 
 .corner-menu {
+  > div {
+    display: inline-block;
+  }
   h1 {
     margin: 0px;
     padding: 0px;
