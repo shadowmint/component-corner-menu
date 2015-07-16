@@ -30,6 +30,5 @@
     "run-sequence": "^1.1.1"
   },
   "dependencies": {
-    "component-utils": "file:component-utils"
   }
 }
