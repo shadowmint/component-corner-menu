@@ -4,5 +4,9 @@ div(class=title_style)
   ul
     for item in items
       li
-        a(href=item.task)
-          = item.title
+        if item.task && (item.task != '')
+          a(href=item.task)
+            = item.title
+        else
+          span
+            = item.title

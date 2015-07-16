@@ -1,62 +1,18 @@
-class Data {
+import $ from 'jquery/dist/jquery';
+import {Root} from 'component-utils/dist/root';
+import short_template from './templates/short';
+import full_template from './templates/full';
 
-  /**
-   * Create a new instance with a root
-   * @param root The root element
-   */
-  constructor(el) {
-    this.$root = el;
-    this.cache_key = null;
-    this.cache_value = null;
-  }
-
-
-  /** Fetch a data attribute by key */
-  param(key) {
-    if (this.cache_key == key) {
-      return this.cache_value;
-    }
-    var value = this.$root.attr(key);
-    if (!value) { value = ''; }
-    this.cache_key = key;
-    this.cache_value = value;
-    return value;
-  }
-
-  /** Split a data attribute by | and return the trimmed parts */
-  parts(key) {
-    var raw = this.param(key);
-    var parts = raw.split('|');
-    for (var i = 0; i < parts.length; ++i) {
-      parts[i] = parts[i].trim();
-    }
-    return parts;
-  }
-
-  /** Return the nth part of a data attribute */
-  nth(key, index) {
-    var rtn = '';
-    var bits = this.parts(key);
-    if (index < bits.length) {
-      rtn = bits[index];
-    }
-    if (rtn[0] == '.') {
-      rtn = rtn.substr(1);
-    }
-    return rtn;
-  }
-}
-
-class CornerMenu {
+export class CornerMenu {
 
   /** Create a new instance */
-  constructor($root, $el, data) {
+  constructor($root, $el) {
 
     // Setup
     this.$el = $el;
     this.templates = {};
-    this.templates.short = data.short;
-    this.templates.full = data.full;
+    this.templates.short = short_template;
+    this.templates.full = full_template;
     this.active = false;
 
     // Find and load links
@@ -66,7 +22,7 @@ class CornerMenu {
       items.push({title: $el.text(), task: $el.attr('href')});
     });
 
-    var data = new Data($el);
+    var data = new Root($el);
     this.data = {
       items: items,
       title: data.nth('data-title', 0),

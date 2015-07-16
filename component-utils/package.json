@@ -1,0 +1,19 @@
+{
+  "name": "component-utils",
+  "version": "0.0.1",
+  "description": "Shared utility library from components",
+  "license": "MIT",
+  "repository": "getbacktofront/component-corner-menu",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "*",
+    "jquery": "^1.11.3"
+  }
+}
