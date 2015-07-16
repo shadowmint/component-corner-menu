@@ -30,5 +30,6 @@
     "run-sequence": "^1.1.1"
   },
   "dependencies": {
+    "component-utils": "git+ssh://doug@shadowmint.xen.prgmr.com/~/repo/node/component-utils.git#0.0.1",
   }
 }
