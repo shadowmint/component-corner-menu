@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "A component to handle nav menus",
   "license": "MIT",
-  "repository": "getbacktofront/component-corner-menu",
+  "repository": "shadowmint/component-corner-menu",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -20,7 +20,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-insert": "^0.4.0",
     "gulp-jade": "^1.0.1",
-    "gulp-js-combine": "git://github.com/shadowmint/gulp-js-combine.git#0.0.4",
+    "gulp-js-combine": "shadowmint/gulp-js-combine.git#0.0.4",
     "gulp-live-server": "0.0.21",
     "gulp-sass": "^2.0.2",
     "gulp-umd": "^0.2.0",
@@ -30,6 +30,6 @@
     "run-sequence": "^1.1.1"
   },
   "dependencies": {
-    "component-utils": "git+ssh://doug@shadowmint.xen.prgmr.com/~/repo/node/component-utils.git#0.0.1"
+    "component-utils": "shadowmint/component-utils.git#0.0.1"
   }
 }
