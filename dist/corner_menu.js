@@ -70,24 +70,24 @@ var CornerMenu = (function () {
     this.redraw();
   }
 
+  /** Clear all held menu items */
+
   _createClass(CornerMenu, [{
     key: 'clear',
-
-    /** Clear all held menu items */
     value: function clear() {
       this.data.items = [];
     }
-  }, {
-    key: 'push',
 
     /** Push a menu item */
+  }, {
+    key: 'push',
     value: function push(title, task) {
       this.data.items.push({ title: title, task: task });
     }
-  }, {
-    key: 'redraw',
 
     /** Redraw this element */
+  }, {
+    key: 'redraw',
     value: function redraw() {
       var _this = this;
 
