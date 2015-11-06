@@ -9,7 +9,7 @@ var insert = require('gulp-insert');
 
 gulp.task('scripts', function() {
   return gulp.src('./src/**/*.js')
-    .pipe(babel())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./dist'));
 });
 

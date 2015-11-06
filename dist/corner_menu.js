@@ -1,30 +1,31 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.CornerMenu = undefined;
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _jquery = require('jquery/dist/jquery');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var _jquery2 = _interopRequireDefault(_jquery);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+var _root = require('component-utils/dist/root');
 
-var _jqueryDistJquery = require('jquery/dist/jquery');
+var _short = require('./templates/short');
 
-var _jqueryDistJquery2 = _interopRequireDefault(_jqueryDistJquery);
+var _short2 = _interopRequireDefault(_short);
 
-var _componentUtilsDistRoot = require('component-utils/dist/root');
+var _full = require('./templates/full');
 
-var _templatesShort = require('./templates/short');
+var _full2 = _interopRequireDefault(_full);
 
-var _templatesShort2 = _interopRequireDefault(_templatesShort);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _templatesFull = require('./templates/full');
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _templatesFull2 = _interopRequireDefault(_templatesFull);
-
-var CornerMenu = (function () {
+var CornerMenu = exports.CornerMenu = (function () {
 
   /** Create a new instance */
 
@@ -34,18 +35,18 @@ var CornerMenu = (function () {
     // Setup
     this.$el = $el;
     this.templates = {};
-    this.templates.short = _templatesShort2['default'];
-    this.templates.full = _templatesFull2['default'];
+    this.templates.short = _short2.default;
+    this.templates.full = _full2.default;
     this.active = false;
 
     // Find and load links
     var items = [];
     this.$el.find('a').each(function (i, el) {
-      var $el = (0, _jqueryDistJquery2['default'])(el);
+      var $el = (0, _jquery2.default)(el);
       items.push({ title: $el.text(), task: $el.attr('href') });
     });
 
-    var data = new _componentUtilsDistRoot.Root($el);
+    var data = new _root.Root($el);
     this.data = {
       items: items,
       title: data.nth('data-title', 0),
@@ -70,24 +71,26 @@ var CornerMenu = (function () {
     this.redraw();
   }
 
+  /** Clear all held menu items */
+
   _createClass(CornerMenu, [{
     key: 'clear',
-
-    /** Clear all held menu items */
     value: function clear() {
       this.data.items = [];
     }
-  }, {
-    key: 'push',
 
     /** Push a menu item */
+
+  }, {
+    key: 'push',
     value: function push(title, task) {
       this.data.items.push({ title: title, task: task });
     }
-  }, {
-    key: 'redraw',
 
     /** Redraw this element */
+
+  }, {
+    key: 'redraw',
     value: function redraw() {
       var _this = this;
 
@@ -110,5 +113,3 @@ var CornerMenu = (function () {
 
   return CornerMenu;
 })();
-
-exports.CornerMenu = CornerMenu;

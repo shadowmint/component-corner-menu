@@ -10,7 +10,7 @@ gulp.task('build-demo', function(callback) {
 
 gulp.task('build-demo-script', function() {
   return gulp.src('./demo/src/index.js')
-    .pipe(babel())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(browserify())
     .pipe(gulp.dest('./demo'));
 });
